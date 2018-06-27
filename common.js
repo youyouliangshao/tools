@@ -90,6 +90,18 @@ var common = {
     isWeixinBrowser: function () {
         return window.navigator.userAgent.toLowerCase().indexOf('micromessenger') > -1
     },
+        /*
+     * @params:u 用户UA
+     * 判断是手机或者PC浏览器
+    * */
+    isMobieOrPcBrowser: function (u) {
+        if (u.match(/Android/i) || u.match(/webOS/i) || u.match(/iPhone/i) || u.match(/iPad/i) || u.match(/iPod/i) || u.match(/BlackBerry/i) || u.match(/Windows Phone/i) || u.match(/windows mobile/i) || u.match(/windows ce/i) || u.match(/ucweb/i) || u.match(/rv:1.2.3.4/i) || u.match(/midp/i)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
 };
 export default common

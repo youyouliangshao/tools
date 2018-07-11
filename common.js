@@ -101,6 +101,11 @@ var common = {
             return false;
         }
 
+    },
+        //微信授权
+    wxAuth(redirectUrl,appid){
+        let url = `&redirect_uri=${variables.serverDomain}${encodeURIComponent(redirectUrl)}&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect`
+        return `${variables.wxAuth}?appid=${appid}${url}`
     }
 
 };

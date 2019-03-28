@@ -107,6 +107,18 @@ var common = {
         let url = `&redirect_uri=${variables.serverDomain}${encodeURIComponent(redirectUrl)}&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect`
         return `${variables.wxAuth}?appid=${appid}${url}`
     }
-
+    //获取url参数
+    parseSearch:function(searchObj) {
+      const search = {};
+      let s = searchObj.replace('?', '');
+      if (!s) return search;
+      s = s.split('&');
+      s.forEach(item => {
+        const value = item.split('=')[1];
+        const key = item.split('=')[0];
+        Object.assign(search, { [key]: value });
+      });
+      return search;
+}
 };
 export default common

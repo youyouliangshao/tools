@@ -1,7 +1,6 @@
 /*
 全局工具类库
 *author:cuiyouliang
-*email:cuiyouliang@limikeji.com
 *date:2018-04-27
 */
 var common = {
